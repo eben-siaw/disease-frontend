@@ -1,0 +1,17 @@
+.input-field {
+    margin-top: 10px;
+}
+
+.custom-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 0.3px solid silver;
+    font-family: "Noto Sans";
+    font-size: 1.1rem;
+    color: #2F3644;
+}
+
+.custom-input:focus {
+    color: #2F3644;
+}

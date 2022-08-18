@@ -1,0 +1,32 @@
+.card {
+    background-color: #2F3644;
+    max-width: 900px;
+    display: inline-block;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: whitesmoke;
+    padding: 20px;
+}
+
+.line {
+    border: 0.5px inset #7F8487;
+    margin: 10px 0 10px 0;
+}
+
+.header {
+    text-align: start;
+    font-family: Poppins;
+}
+
+.content {
+    font-family: 'Padauk';
+    font-size: 1.2rem;
+}
+
+.actions {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
