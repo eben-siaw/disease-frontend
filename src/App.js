@@ -3,7 +3,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Create from './diseases/pages/Create/Create';
 import Feed from './diseases/pages/Feed/Feed';
 import Header from './shared/components/Header/Header';
-import Symptoms from './diseases/pages/Symptoms/Symptoms';
+import Symptoms from './diseases/pages/Symptoms/Symptoms';  
+
+import StrokeQuestions from './diseases/pages/Questions/Stroke';
+import MalariaQuestions from './diseases/pages/Questions/Malaria';
+import CoronavirusQuestions from './diseases/pages/Questions/Coronavirus';
+import DiabetesQuestions from './diseases/pages/Questions/Diabetes';
+import RespiratoryQuestions from './diseases/pages/Questions/Respiratory';
+
+
 
 function App() {
   return (
@@ -12,7 +20,12 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Feed />} />
         <Route exact path='/create' element={<Create />} />
-        <Route exact path='/symptoms' element={<Symptoms />} />
+        <Route exact path='/symptoms' element={<Symptoms />} /> 
+        <Route exact path="/stroke" element={<StrokeQuestions />} /> 
+        <Route exact path="/corona" element={<CoronavirusQuestions />} />  
+        <Route exact path="/malaria" element={<MalariaQuestions />} /> 
+        <Route exact path="/diabetes" element={<DiabetesQuestions />} /> 
+        <Route exact path="/respiratory" element={<RespiratoryQuestions />} /> 
       </Routes>
     </BrowserRouter>
   )

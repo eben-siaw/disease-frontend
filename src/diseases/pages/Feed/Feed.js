@@ -7,9 +7,17 @@ import Slideshow from '../../../shared/components/slide';
 function Feed() {
     const dispatch = useDispatch();
 
-    const diseases = useSelector(state => {
-        return state.diseases.diseases;
-    });
+    // const diseases = useSelector(state => {
+    //     return state.diseases.diseases;
+    // }); 
+
+    const diseases = [ 
+     {name: 'Stroke', description: 'a disease', id:1}, 
+     {name: 'Diabetes', description: 'a disease', id: 2}, 
+     {name: 'Lungs Respiratory', description: 'a disease', id: 3}, 
+     {name: 'Coronavirus', description: 'a disease', id: 4},
+     {name: 'Malaria', description: 'a disease', id: 5}
+    ]
 
     useEffect(() => {
         dispatch(fetchDiseases(0));
