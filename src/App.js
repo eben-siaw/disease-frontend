@@ -21,11 +21,11 @@ function App() {
         <Route exact path='/' element={<Feed />} />
         <Route exact path='/create' element={<Create />} />
         <Route exact path='/symptoms' element={<Symptoms />} /> 
-        <Route exact path="/stroke" element={<StrokeQuestions />} /> 
-        <Route exact path="/corona" element={<CoronavirusQuestions />} />  
-        <Route exact path="/malaria" element={<MalariaQuestions />} /> 
-        <Route exact path="/diabetes" element={<DiabetesQuestions />} /> 
-        <Route exact path="/respiratory" element={<RespiratoryQuestions />} /> 
+        <Route exact path="/questions/stroke" element={<StrokeQuestions />} /> 
+        <Route exact path="/questions/corona" element={<CoronavirusQuestions />} />  
+        <Route exact path="/questions/malaria" element={<MalariaQuestions />} /> 
+        <Route exact path="/questions/diabetes" element={<DiabetesQuestions />} /> 
+        <Route exact path="/questions/respiratory" element={<RespiratoryQuestions />} /> 
       </Routes>
     </BrowserRouter>
   )

@@ -7,8 +7,10 @@ import createDiseaseUsecase from '../../../domain/usecase/createDiseaseUsecase';
 import getAllSymptomsUsecase from '../../../domain/usecase/getAllSymptomsUsecase';
 import ActionButton from "../../../shared/components/ActionButton/ActionButton";
 import Card from "../../../shared/components/Card/Card";
+import Label from '../../../shared/components/Header/Label';
 import InputField from "../../../shared/components/InputField/InputField";
 import InputTags from "../../../shared/components/InputTags/InputTags";
+
 
 const schema = yup.object({
     name: yup.string().required('Favor informar o nome'),
@@ -62,9 +64,27 @@ function StrokeQuestions() {
     return (
         <main className="page">
             <div className="content">
-                <Card title="Add a disease">
-                    <form className="form-disease" onSubmit={onSave}>
-                        <InputField type="text" hint="Name of Disease" error={errors.name?.message} register={register("name")} />
+                <Card title="Stroke Questions">
+                    <form className="form-disease" onSubmit={onSave}> 
+
+                        <Label hint="Do you see shortcomings in the face?"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} />
+ 
+                        <Label hint="Do you experience sudden confusion or trouble speaking?"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} />
+       
+                        <Label hint="Is there an abrupt disarray or inconvenience talking?"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} />
+        
+                        <Label hint="Do you experience sudden difficulty walking or dizziness?"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} />
+
+                        {/* <InputField type="text" hint="Diarrhea?" error={errors.name?.message} register={register("name")} />  */}
+
+                        <Label hint="Do you have vision issues?" />
+                        <InputField type="text" hint="Do you have vision issues?" error={errors.name?.message} register={register("name")} /> 
+ 
+                        {/* <InputField type="text" hint="Fatigue?" error={errors.name?.message} register={register("name")} />   */}
 
                         <InputTags
                             hint="Symptom"
@@ -74,7 +94,7 @@ function StrokeQuestions() {
                             onDelete={onDelete}
                             onAddition={onAddition} />
 
-                        <InputField type="textarea" hint="Brief description" error={errors.description?.message} register={register("description")} />
+                        {/* <InputField type="textarea" hint="Brief description" error={errors.description?.message} register={register("description")} /> */}
 
                         <ActionButton text="Save" type="success" style={{ marginTop: "20px" }} />
                     </form>

@@ -7,8 +7,10 @@ import createDiseaseUsecase from '../../../domain/usecase/createDiseaseUsecase';
 import getAllSymptomsUsecase from '../../../domain/usecase/getAllSymptomsUsecase';
 import ActionButton from "../../../shared/components/ActionButton/ActionButton";
 import Card from "../../../shared/components/Card/Card";
+import Label from '../../../shared/components/Header/Label';
 import InputField from "../../../shared/components/InputField/InputField";
 import InputTags from "../../../shared/components/InputTags/InputTags";
+
 
 const schema = yup.object({
     name: yup.string().required('Favor informar o nome'),
@@ -63,9 +65,29 @@ function CoronavirusQuestions() {
     return (
         <main className="page">
             <div className="content">
-                <Card title="Add a disease">
-                    <form className="form-disease" onSubmit={onSave}>
-                        <InputField type="text" hint="Name of Disease" error={errors.name?.message} register={register("name")} />
+                <Card title="Coronavirus Questions">
+                    <form className="form-disease" onSubmit={onSave}> 
+                 
+                       <Label hint="Do you have difficulty breathing?" />
+                        <InputField type="text" error={errors.name?.message} register={register("name")} />
+                         
+                        <Label hint="Do you have fever"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} />
+       
+                        <Label hint="General feeling of discomfort?"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} />
+
+                        <Label hint="Nausea and vomiting?"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} />
+
+                        <Label hint="Lost of taste or smell?"/>
+                       <InputField type="text"  error={errors.name?.message} register={register("name")} /> 
+
+                       <Label hint="Muscle or joint pain?"/>
+                       <InputField type="text"  error={errors.name?.message} register={register("name")} /> 
+
+                       <Label hint="Do you have a rash on skin?"/>
+                       <InputField type="text"  error={errors.name?.message} register={register("name")} />  
 
                         <InputTags
                             hint="Symptom"
@@ -75,7 +97,7 @@ function CoronavirusQuestions() {
                             onDelete={onDelete}
                             onAddition={onAddition} />
 
-                        <InputField type="textarea" hint="Brief description" error={errors.description?.message} register={register("description")} />
+                        {/* <InputField type="textarea" hint="Brief description" error={errors.description?.message} register={register("description")} /> */}
 
                         <ActionButton text="Save" type="success" style={{ marginTop: "20px" }} />
                     </form>

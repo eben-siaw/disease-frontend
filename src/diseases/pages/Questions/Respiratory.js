@@ -7,8 +7,10 @@ import createDiseaseUsecase from '../../../domain/usecase/createDiseaseUsecase';
 import getAllSymptomsUsecase from '../../../domain/usecase/getAllSymptomsUsecase';
 import ActionButton from "../../../shared/components/ActionButton/ActionButton";
 import Card from "../../../shared/components/Card/Card";
+import Label from '../../../shared/components/Header/Label';
 import InputField from "../../../shared/components/InputField/InputField";
 import InputTags from "../../../shared/components/InputTags/InputTags";
+
 
 const schema = yup.object({
     name: yup.string().required('Favor informar o nome'),
@@ -63,9 +65,22 @@ function RespiratoryQuestions() {
     return (
         <main className="page">
             <div className="content">
-                <Card title="Add a disease">
-                    <form className="form-disease" onSubmit={onSave}>
-                        <InputField type="text" hint="Name of Disease" error={errors.name?.message} register={register("name")} />
+                <Card title="Respiratory Questions">
+                    <form className="form-disease" onSubmit={onSave}> 
+
+                         <Label hint="Diarrhea?"/>
+                        <InputField type="text" error={errors.name?.message} register={register("name")} />
+
+
+                        <Label hint="Diarrhea?"/>
+                        <InputField type="text" error={errors.name?.message} register={register("name")} />
+
+
+                        <Label hint="Diarrhea?"/>
+                        <InputField type="text" error={errors.name?.message} register={register("name")} />
+
+                        <Label hint="Diarrhea?"/>
+                        <InputField type="text" error={errors.description?.message} register={register("description")} />
 
                         <InputTags
                             hint="Symptom"
@@ -73,9 +88,7 @@ function RespiratoryQuestions() {
                             tags={selectedSymptoms}
                             suggestions={symptoms}
                             onDelete={onDelete}
-                            onAddition={onAddition} />
-
-                        <InputField type="textarea" hint="Brief description" error={errors.description?.message} register={register("description")} />
+                            onAddition={onAddition} /> 
 
                         <ActionButton text="Save" type="success" style={{ marginTop: "20px" }} />
                     </form>

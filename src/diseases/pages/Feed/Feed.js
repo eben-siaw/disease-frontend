@@ -12,11 +12,11 @@ function Feed() {
     // }); 
 
     const diseases = [ 
-     {name: 'Stroke', description: 'a disease', id:1}, 
-     {name: 'Diabetes', description: 'a disease', id: 2}, 
-     {name: 'Lungs Respiratory', description: 'a disease', id: 3}, 
-     {name: 'Coronavirus', description: 'a disease', id: 4},
-     {name: 'Malaria', description: 'a disease', id: 5}
+     {name: 'Stroke', description: 'a disease', id:'stroke'}, 
+     {name: 'Diabetes', description: 'a disease', id: 'diabetes'}, 
+     {name: 'Respiratory', description: 'a disease', id: 'respiratory'}, 
+     {name: 'Coronavirus', description: 'a disease', id: 'corona'},
+     {name: 'Malaria', description: 'a disease', id: 'malaria'}
     ]
 
     useEffect(() => {
@@ -25,7 +25,7 @@ function Feed() {
 
     return (
         <div className="feed-box"> 
-           <Slideshow />
+          
             <div> 
             {
                 diseases.map(disease => (

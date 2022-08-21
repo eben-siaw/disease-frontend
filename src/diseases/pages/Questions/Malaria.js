@@ -7,6 +7,7 @@ import createDiseaseUsecase from '../../../domain/usecase/createDiseaseUsecase';
 import getAllSymptomsUsecase from '../../../domain/usecase/getAllSymptomsUsecase';
 import ActionButton from "../../../shared/components/ActionButton/ActionButton";
 import Card from "../../../shared/components/Card/Card";
+import Label from '../../../shared/components/Header/Label';
 import InputField from "../../../shared/components/InputField/InputField";
 import InputTags from "../../../shared/components/InputTags/InputTags";
 
@@ -62,10 +63,31 @@ function MalariaQuestions() {
     return (
         <main className="page">
             <div className="content">
-                <Card title="Add a disease">
-                    <form className="form-disease" onSubmit={onSave}>
-                        <InputField type="text" hint="Name of Disease" error={errors.name?.message} register={register("name")} />
+                <Card title="Malaria Questions">
+                    <form className="form-disease" onSubmit={onSave}> 
 
+                        <Label hint="Do you have fever"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} />
+       
+                        <Label hint="General feeling of discomfort?"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} />
+                         
+                        <Label hint="Nausea and vomiting?"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} />
+
+                        <Label hint="Diarrhea?"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} /> 
+
+                        <Label hint="Muscle or joint pain?"/>
+                        <InputField type="text" error={errors.name?.message} register={register("name")} /> 
+
+                        <Label hint="Fatigue?"/>
+                        <InputField type="text"  error={errors.name?.message} register={register("name")} />  
+
+                        {/* <InputField type="text" hint="" error={errors.name?.message} register={register("name")} /> */}
+
+                        <Label hint="Are you coughing?"/>
+                        <InputField type="text" error={errors.description?.message} register={register("description")} />
                         <InputTags
                             hint="Symptom"
                             error={selectedSymptomsError}
@@ -73,9 +95,7 @@ function MalariaQuestions() {
                             suggestions={symptoms}
                             onDelete={onDelete}
                             onAddition={onAddition} />
-
-                        <InputField type="textarea" hint="Brief description" error={errors.description?.message} register={register("description")} />
-
+                            
                         <ActionButton text="Save" type="success" style={{ marginTop: "20px" }} />
                     </form>
                 </Card>

@@ -17,9 +17,8 @@ function InfoCard({ disease }) {
             <div className="content">{disease.description}</div>
             {/* </Link> */}
             <div className="actions">
-                <ActionButton text="View" path="/edit" state={disease} size="sm" type="warn" />
-                <ActionButton text="Questions" path="/questions" state={disease} size="sm" type="success" />
-                <ActionButton text="Excluir" path="/delete" size="sm" type="danger" />
+                <ActionButton text="View"  state={disease} size="sm" type="warn" />
+                <ActionButton text="Questions" path={"/questions/" + disease.id} state={disease} size="sm" type="success" />
             </div>
         </div>
     );

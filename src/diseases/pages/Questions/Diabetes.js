@@ -7,8 +7,10 @@ import createDiseaseUsecase from '../../../domain/usecase/createDiseaseUsecase';
 import getAllSymptomsUsecase from '../../../domain/usecase/getAllSymptomsUsecase';
 import ActionButton from "../../../shared/components/ActionButton/ActionButton";
 import Card from "../../../shared/components/Card/Card";
+import Label from '../../../shared/components/Header/Label';
 import InputField from "../../../shared/components/InputField/InputField";
 import InputTags from "../../../shared/components/InputTags/InputTags";
+
 
 const schema = yup.object({
     name: yup.string().required('Favor informar o nome'),
@@ -62,20 +64,38 @@ function DiabetesQuestions() {
 
     return (
         <main className="page">
-            <div className="content">
-                <Card title="Add a disease">
-                    <form className="form-disease" onSubmit={onSave}>
-                        <InputField type="text" hint="Name of Disease" error={errors.name?.message} register={register("name")} />
+            <div className="content"> 
 
+                <Card title="Diabetes Questions"> 
+
+                    <form className="form-disease" onSubmit={onSave}> 
+
+                        {/* <InputField type="text" hint="Name of Disease" error={errors.name?.message} register={register("name")} /> */}
+                        <Label hint="Do you feel increased hunger more often or occasionally?"/>
+                        <InputField type="text" error={errors.name?.message} register={register("name")} />
+                         
+                        <Label hint="General feeling of discomfort?"/>
+                        <InputField type="text" error={errors.name?.message} register={register("name")} />
+                         
+                        <Label hint="Nausea and vomiting?"/>
+                        <InputField type="text" error={errors.name?.message} register={register("name")} />
+
+                        <Label hint="Do you have blurry vision?"/>
+                        <InputField type="text" error={errors.name?.message} register={register("name")} /> 
+
+                        <Label hint="Frequent hunger?"/>
+                        <InputField type="text" error={errors.name?.message} register={register("name")} /> 
+                            
                         <InputTags
                             hint="Symptom"
                             error={selectedSymptomsError}
                             tags={selectedSymptoms}
                             suggestions={symptoms}
                             onDelete={onDelete}
-                            onAddition={onAddition} />
+                            onAddition={onAddition} /> 
 
-                        <InputField type="textarea" hint="Brief description" error={errors.description?.message} register={register("description")} />
+                        <Label hint="Do you have sores that don't heal?"/>
+                        <InputField type="text"  error={errors.description?.message} register={register("description")} />
 
                         <ActionButton text="Save" type="success" style={{ marginTop: "20px" }} />
                     </form>
